@@ -1,0 +1,57 @@
+1. DOM elements of different types
+	<div>
+  		<Counter />
+	</div>
+
+	<span>
+  		<Counter />
+	</span>
+
+2. DOM Elements Of same type
+	<div className="before" title="stuff" />
+
+	<div className="after" title="stuff" />
+
+	<div style={{color: 'red', fontWeight: 'bold'}} />
+
+	<div style={{color: 'green', fontWeight: 'bold'}} />
+
+3. Component Elements Of The Same Type
+	Update life cycle events occur
+
+4. Recursing On Children
+
+	<ul>
+	  <li>first</li>
+	  <li>second</li>
+	</ul>
+
+	<ul>
+	  <li>first</li>
+	  <li>second</li>
+	  <li>third</li>
+	</ul>
+
+	<ul>
+	  <li>Duke</li>
+	  <li>Villanova</li>
+	</ul>
+
+	<ul>
+	  <li>Connecticut</li>
+	  <li>Duke</li>
+	  <li>Villanova</li>
+	</ul>
+
+Keys
+
+	<ul>
+	  <li key="2015">Duke</li>
+	  <li key="2016">Villanova</li>
+	</ul>
+
+	<ul>
+	  <li key="2014">Connecticut</li>
+	  <li key="2015">Duke</li>
+	  <li key="2016">Villanova</li>
+	</ul>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic example</title>
+	<script src="react-15.0.1/build/react.js"></script>
+    <script src="react-15.0.1/build/react-dom.js"></script>
+</head>
+<body>
+	<!-- Div where react will mount the new elemnt -->
+	<div id="main-container">
+	</div>
+
+	<script type="text/javascript">
+		// React.createElement take three arguments
+		//		createElement(string/ReactClass type, [object props], [children ...])
+		//		1. type: Type of HTML element or a react class components
+		//		2. props: Attributes for the HTML element
+		// 		3. children: Child elements, which are created further using react element
+		var element = React.createElement('div', {}, 'Hello, World');
+
+		// ReactDOM.render takes a react element or react component and adds the element to the specified the DOM node
+		ReactDOM.render(
+			element, 
+			document.getElementById('main-container')
+		);
+	</script>
+</body>
+</html>

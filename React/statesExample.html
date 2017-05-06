@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSX example</title>
+	<script src="react-15.0.1/build/react.js"></script>
+    <script src="react-15.0.1/build/react-dom.js"></script>
+    <script src="react-15.0.1/build/browser.js"></script>
+</head>
+<body>
+	<!-- Div where react will mount the new elemnt -->
+	<div id="main-container">
+		
+	</div>
+
+	<!-- Babel is used to transpile the JSX to JavaScript -->
+	<!-- 
+	Use below link for JSX to JS
+	https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code= -->
+	<script type="text/babel">
+
+		// Babel transpiles the below code to React.createElement
+		// React.createClass accepts an object with a render function and returns a react class 
+		// component
+		
+		var GreetingComponent = React.createClass({
+
+			// getInitialState method sets the initial states of the component
+			// 
+			getInitialState: function() {
+				return {name: "Microsoft"}
+			},
+			
+			changeName: function () {
+				// Everytime setState is called React re-renders the corresponding component
+				this.setState({
+								name: "Microsoft India"
+							  })
+			},
+
+			render: function() {
+				// Event in React
+				return (
+					<div>
+						<h2>Hello, {this.state.name}</h2>
+						<input type="button" value="Click Me" onClick={ this.changeName } />
+					</div>
+				)
+			}
+		});
+
+		ReactDOM.render(
+			//name is passed as an attribute to the GreetingComponent
+			//Inside the GreetingComponent it can be accessed using this.props.name
+			// React.render returns a single element 
+			<GreetingComponent/>,
+			document.getElementById('main-container')
+		);
+	</script>
+</body>
+</html>

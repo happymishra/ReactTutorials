@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSX example</title>
+	<script src="react-15.0.1/build/react.js"></script>
+    <script src="react-15.0.1/build/react-dom.js"></script>
+    <script src="react-15.0.1/build/browser.js"></script>
+</head>
+<body>
+	<!-- Div where react will mount the new elemnt -->
+	<div id="main-container">
+		
+	</div>
+
+	<!-- Babel is used to transpile the JSX to JavaScript -->
+	<!-- 
+	Use below link for JSX to JS
+	https://babeljs.io/repl/#?babili=false&evaluate=true&lineWrap=false&presets=es2015%2Creact%2Cstage-2&targets=&browsers=&builtIns=false&debug=false&code= -->
+	<script type="text/babel">
+
+		// Babel transpiles the below code to React.createElement
+		// React.createClass accepts an object with a render function and returns a react class 
+		// component
+		
+		var GreetingComponent = React.createClass({
+			render: function() {
+				return (
+					<h2>Hello, World</h2>
+				)
+			}
+		});
+
+		ReactDOM.render(
+			<GreetingComponent/>,
+			document.getElementById('main-container')
+		);
+	</script>
+</body>
+</html>

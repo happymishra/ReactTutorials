@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiple Component</title>
+	<script src="react-15.0.1/build/react.js"></script>
+    <script src="react-15.0.1/build/react-dom.js"></script>
+    <script src="react-15.0.1/build/browser.js"></script>
+</head>
+<body>
+	<div id="main-container">
+	</div>
+
+	<script type="text/babel">
+		var NameDisplayComponent =  React.createClass({
+			render: function() {
+				return (
+					<p>Hello, {this.props.name} </p>
+				);
+			}
+		});
+
+		var GetNameComponent = React.createClass({
+			getInitialState: function() {
+				return {name: "Microsoft Corp", count: 1}
+			},
+
+			changeName: function () {
+				// Everytime setState is called React re-renders the corresponding component
+				var newName;
+
+				if("Microsoft Corp" === this.state.name) {
+					newName = "Microsoft India";
+				} else {
+					newName = "Microsoft Corp";
+				}
+				this.setState({ name: newName})
+			},
+
+			render: function() {
+				return (
+					<div>
+						<NameDisplayComponent name={this.state.name}/>
+						<input type="button" value="Click Me" onClick={ this.changeName } />
+					</div>
+				)
+			}
+		});
+
+		ReactDOM.render(
+			//name is passed as an attribute to the GreetingComponent
+			//Inside the GreetingComponent it can be accessed using this.props.name
+			// React.render returns a single element 
+
+			<div>
+				<GetNameComponent/>
+				<GetNameComponent/>
+			</div>,
+			document.getElementById('main-container')
+		);
+	</script>
+</body>
+</html>
